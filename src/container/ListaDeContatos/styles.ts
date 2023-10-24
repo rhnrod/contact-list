@@ -9,6 +9,7 @@ export const Container = styled.div`
   height: 620px;
   padding-left: 40px;
   padding-top: 120px;
+  user-select: none;
 `
 
 export const ListaContainer = styled.div`
