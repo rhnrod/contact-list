@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { variaveis } from '../../styles/variaveis'
 
 export const ContactCard = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -26,5 +27,21 @@ export const ContactCard = styled.div`
 
   p {
     font-family: ${variaveis.fontSecondary};
+  }
+
+  &:hover .edit {
+    display: block;
+  }
+
+  .edit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+    padding: 8px;
+
+    &:hover {
+      color: ${variaveis.avatarBlue};
+    }
   }
 `

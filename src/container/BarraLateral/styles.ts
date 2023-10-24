@@ -1,9 +1,11 @@
 import styled from 'styled-components'
+import { variaveis } from '../../styles/variaveis'
 
 export const BarraLateralContainer = styled.div`
   width: 360px;
   height: 100vh;
   background-color: #ccc;
+  padding: 16px;
 `
 
 export const Wrapper = styled.div`
@@ -14,8 +16,8 @@ export const Wrapper = styled.div`
     position: relative;
     font-size: 20px;
     left: 28px;
-    margin: 16px;
-    max-width: 80%;
+    max-width: 300px;
+    width: 100%;
     height: 28px;
     border-radius: 0 6px 6px 0;
     border: none;
@@ -23,11 +25,15 @@ export const Wrapper = styled.div`
     &:focus {
       outline: none;
     }
+
+    &::selection {
+      background-color: ${variaveis.avatarGreen};
+      color: #fff;
+    }
   }
   .icon {
     position: absolute;
     top: 50%;
-    left: 16px;
     transform: translateY(-50%);
     color: #333;
     padding: 6px;
