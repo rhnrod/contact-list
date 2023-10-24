@@ -7,11 +7,14 @@ type Contact = {
   email: string
   telefone: number
 }
+
+const avatarSize = 80
+
 const Contato = ({ nome, email, telefone }: Contact) => (
   <ContactCard>
     <Avatar
       variant="beam"
-      size={80}
+      size={avatarSize}
       name={nome}
       colors={[
         variaveis.avatarYellow,
