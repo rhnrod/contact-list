@@ -4,15 +4,16 @@ import { variaveis } from '../../styles/variaveis'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
-type Contact = {
+export type Contact = {
   nome: string
   email: string
   telefone: number
+  id: number
 }
 
 const avatarSize = 80
 
-const Contato = ({ nome, email, telefone }: Contact) => (
+const Contato = ({ nome, email, telefone, id }: Contact) => (
   <ContactCard>
     <Avatar
       variant="beam"
@@ -26,7 +27,7 @@ const Contato = ({ nome, email, telefone }: Contact) => (
         variaveis.avatarBlue
       ]}
     />
-    <div>
+    <div key={id}>
       <h3>{nome}</h3>
       <p>{email}</p>
       <p>+55 {telefone}</p>

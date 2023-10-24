@@ -6,7 +6,8 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: ${variaveis.fontPrimary}
+  font-family: ${variaveis.fontPrimary};
+  list-style-type: none;
 }
 `
 
