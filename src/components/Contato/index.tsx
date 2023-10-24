@@ -8,7 +8,7 @@ export type Contact = {
   nome: string
   email: string
   telefone: number
-  id: number
+  id: string
 }
 
 const avatarSize = 80
