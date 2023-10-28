@@ -1,5 +1,5 @@
 import Avatar from 'boring-avatars'
-import { ContactCard } from './styles'
+import { ContactCard, Info } from './styles'
 import { variaveis } from '../../styles/variaveis'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
@@ -27,11 +27,11 @@ const Contato = ({ nome, email, telefone, id }: Contact) => (
         variaveis.avatarBlue
       ]}
     />
-    <div key={id}>
+    <Info key={id}>
       <h3>{nome}</h3>
-      <p>{email}</p>
-      <p>+55 {telefone}</p>
-    </div>
+      <h5>{email}</h5>
+      <h5>+55 (55) {telefone}</h5>
+    </Info>
     <FontAwesomeIcon icon={faPenToSquare} className="edit" />
   </ContactCard>
 )

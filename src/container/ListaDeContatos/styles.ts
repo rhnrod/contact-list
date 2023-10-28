@@ -2,14 +2,16 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
+  width: 1120px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  height: 620px;
+  height: 100vh;
   padding-left: 40px;
-  padding-top: 120px;
   user-select: none;
+
+  overflow-y: scroll;
 `
 
 export const ListaContainer = styled.div`
@@ -22,6 +24,7 @@ export const Titulo = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  padding-top: 150px;
 
   .icon {
     height: 32px;

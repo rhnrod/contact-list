@@ -11,6 +11,7 @@ export const BarraLateralContainer = styled.div`
 export const Wrapper = styled.div`
   position: relative;
   width: 300px;
+  margin-bottom: 20px;
 
   input {
     position: relative;

@@ -25,10 +25,6 @@ export const ContactCard = styled.div`
       -8px -8px 8px #ffffff;
   }
 
-  p {
-    font-family: ${variaveis.fontSecondary};
-  }
-
   &:hover .edit {
     display: block;
   }
@@ -43,5 +39,19 @@ export const ContactCard = styled.div`
     &:hover {
       color: ${variaveis.avatarBlue};
     }
+  }
+`
+
+export const Info = styled.div`
+  max-width: 200px;
+
+  h5,
+  h6 {
+    font-family: ${variaveis.fontSecondary};
+    max-width: 180px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `

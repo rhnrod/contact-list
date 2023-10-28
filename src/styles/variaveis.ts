@@ -6,5 +6,7 @@ export const variaveis = {
   avatarBlue: '#3a86ff',
 
   fontPrimary: 'Noto Sans, sans-serif',
-  fontSecondary: 'Poppins, sans-serif'
+  fontSecondary: 'Poppins, sans-serif',
+
+  buttonStandard: '#288'
 }

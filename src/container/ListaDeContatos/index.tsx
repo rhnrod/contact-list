@@ -4,78 +4,97 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { v4 as uuidv4 } from 'uuid'
 
 import Contato, { Contact } from '../../components/Contato'
+import BotaoAdicionar from '../../components/BotaoAdicionar'
 
 const contatos: Contact[] = [
   {
-    nome: 'Rhuan',
+    nome: 'Jorge Amado',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'amadojorge@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Machado de Assis',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'deassis@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Augusto dos Anjos',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'augusto.monstro@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Clarice Lispector',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'clisp@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Lya Luft',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'lya_puft@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Graciliano Ramos',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'graciliano.ramos@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Guimarães Rosa',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'rosaraesguima@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Lygia Fagundes Telles',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'ligiaftelles@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Ariano Suassuna',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'armorial.suassuna@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Raimundo Carrero',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'carreror@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Lygia Bojunga Nunes',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'bolsaamarela@email.io',
     id: uuidv4()
   },
   {
-    nome: 'Rhuan',
+    nome: 'Câmara Cascudo',
     telefone: 55555555,
-    email: 'rhuan@email.io',
+    email: 'ludovicus@email.io',
+    id: uuidv4()
+  },
+  {
+    nome: 'Raimundo Carrero',
+    telefone: 55555555,
+    email: 'carreror@email.io',
+    id: uuidv4()
+  },
+  {
+    nome: 'Lygia Bojunga Nunes',
+    telefone: 55555555,
+    email: 'bolsaamarela@email.io',
+    id: uuidv4()
+  },
+  {
+    nome: 'Câmara Cascudo',
+    telefone: 55555555,
+    email: 'ludovicus@email.io',
     id: uuidv4()
   }
 ]
@@ -96,6 +115,7 @@ const ListaDeContatos = () => {
             id={c.id}
           />
         ))}
+        <BotaoAdicionar />
       </ListaContainer>
     </Container>
   )
