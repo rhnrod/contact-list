@@ -7,13 +7,22 @@ import BotaoAdicionar from '../../components/BotaoAdicionar'
 import { RootReducer } from '../../store'
 
 const ListaDeContatos = () => {
-  const estado = useSelector((state: RootReducer) => state.contatos)
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
+  const { termo, valor } = useSelector((state: RootReducer) => state.filtro)
+
+  const filtraTarefas = () => {
+    return itens.filter(
+      (item) => item.nome.toLowerCase().search(termo.toLowerCase()) >= 0
+    )
+  }
 
   return (
     <Container>
+      Termo: {termo} | Ordem: {valor}
       <ListaContainer>
-        {estado.map((c) => (
+        {filtraTarefas().map((c) => (
           <Contato
+            key={c.id}
             nome={c.nome}
             telefone={c.telefone}
             email={c.email}

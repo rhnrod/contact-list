@@ -1,46 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faArrowDownAZ,
-  faArrowDownZA,
-  faArrowDown19,
-  faArrowDown91
-} from '@fortawesome/free-solid-svg-icons'
-import { Botao, Title } from './styles'
-import { useState } from 'react'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { Botao } from './styles'
 
-const BotaoFiltro = () => {
-  const [isAtoZ, setIsAtoZ] = useState(true)
-  const [is1to9, setIs1to9] = useState(true)
+export type Props = {
+  ativo?: boolean
+  icon: IconProp
+  text: string
+}
 
-  function changeDisplayOrder() {
-    return setIsAtoZ(!isAtoZ)
-  }
-
-  function changeDisplayNumberOrder() {
-    return setIs1to9(!is1to9)
-  }
-
+const BotaoFiltro = ({ ativo, icon, text }: Props) => {
   return (
     <>
-      <Title>Filtros</Title>
-      {isAtoZ ? (
-        <Botao onClick={changeDisplayOrder}>
-          <FontAwesomeIcon icon={faArrowDownAZ} /> Ordem crescente
-        </Botao>
-      ) : (
-        <Botao onClick={changeDisplayOrder}>
-          <FontAwesomeIcon icon={faArrowDownZA} /> Ordem decrescente
-        </Botao>
-      )}{' '}
-      {is1to9 ? (
-        <Botao onClick={changeDisplayNumberOrder}>
-          <FontAwesomeIcon icon={faArrowDown19} /> Ordem crescente
-        </Botao>
-      ) : (
-        <Botao onClick={changeDisplayNumberOrder}>
-          <FontAwesomeIcon icon={faArrowDown91} /> Ordem decrescente
-        </Botao>
-      )}{' '}
+      <Botao ativo={ativo}>
+        <FontAwesomeIcon icon={icon} /> {text}
+      </Botao>
     </>
   )
 }
