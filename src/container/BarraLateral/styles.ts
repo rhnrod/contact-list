@@ -8,6 +8,18 @@ export const BarraLateralContainer = styled.div`
   padding: 16px;
 `
 
+export const Titulo = styled.h1`
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+
+  .iconPhone {
+    height: 24px;
+    color: ${variaveis.avatarPink};
+  }
+`
+
 export const Wrapper = styled.div`
   position: relative;
   width: 300px;

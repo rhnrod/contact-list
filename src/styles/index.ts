@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-family: ${variaveis.fontPrimary};
   list-style-type: none;
+  scrollbar-width: none;
 }
 `
 

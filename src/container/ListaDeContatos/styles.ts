@@ -19,14 +19,3 @@ export const ListaContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
 `
-
-export const Titulo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-top: 150px;
-
-  .icon {
-    height: 32px;
-  }
-`

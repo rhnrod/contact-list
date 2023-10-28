@@ -1,10 +1,13 @@
-import { BarraLateralContainer, Wrapper } from './styles'
+import { BarraLateralContainer, Titulo, Wrapper } from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import BotaoFiltro from '../../components/BotaFIltros'
+import { faMagnifyingGlass, faPhone } from '@fortawesome/free-solid-svg-icons'
+import BotaoFiltro from '../../components/BotaoFIltros'
 const BarraLateral = () => {
   return (
     <BarraLateralContainer>
+      <Titulo>
+        <FontAwesomeIcon icon={faPhone} className="iconPhone" /> CallMe Maybe
+      </Titulo>
       <Wrapper>
         <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
         <input type="text" placeholder="Buscar" />
