@@ -11,7 +11,6 @@ export const ContactCard = styled.div`
 
   width: 340px;
   height: 120px;
-  cursor: pointer;
   transition: all ease 0.2s;
 
   background: linear-gradient(145deg, #f0f0f0, #cacaca);
@@ -37,6 +36,7 @@ export const ContactCard = styled.div`
     right: 20px;
     display: none;
     padding: 8px;
+    cursor: pointer;
 
     &:hover {
       color: ${variaveis.avatarBlue};
@@ -49,6 +49,7 @@ export const ContactCard = styled.div`
     right: 20px;
     display: none;
     padding: 8px;
+    cursor: pointer;
 
     &:hover {
       color: ${variaveis.avatarGreen};
@@ -61,6 +62,7 @@ export const ContactCard = styled.div`
     right: 50px;
     display: none;
     padding: 8px;
+    cursor: pointer;
 
     &:hover {
       color: ${variaveis.avatarPink};

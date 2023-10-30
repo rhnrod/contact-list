@@ -1,10 +1,11 @@
-import { Container, ListaContainer } from './styles'
+import { ListaContainer } from './styles'
 import { Contact } from '../../components/Contato'
 import Contato from '../../components/Contato'
 import { useSelector } from 'react-redux'
 
 import BotaoAdicionar from '../../components/BotaoAdicionar'
 import { RootReducer } from '../../store'
+import { ContainerMain } from '../../styles'
 
 const ListaDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
@@ -53,7 +54,7 @@ const ListaDeContatos = () => {
   }
 
   return (
-    <Container>
+    <ContainerMain>
       <ListaContainer>
         {filtrarContatos().map((c) => (
           <Contato
@@ -66,7 +67,7 @@ const ListaDeContatos = () => {
         ))}
         <BotaoAdicionar />
       </ListaContainer>
-    </Container>
+    </ContainerMain>
   )
 }
 

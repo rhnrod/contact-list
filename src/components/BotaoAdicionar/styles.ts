@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { variaveis } from '../../styles/variaveis'
 
-export const BotaoRedondo = styled.a`
+export const BotaoRedondo = styled(Link)`
   position: fixed;
   padding: 16px;
   font-size: 22px;

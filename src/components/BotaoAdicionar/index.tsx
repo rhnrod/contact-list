@@ -4,7 +4,7 @@ import { BotaoRedondo } from './styles'
 
 const BotaoAdicionar = () => (
   <>
-    <BotaoRedondo>
+    <BotaoRedondo to={'create-contact'}>
       <FontAwesomeIcon icon={faUserPlus} />
     </BotaoRedondo>
   </>

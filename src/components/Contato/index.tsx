@@ -52,13 +52,15 @@ const Contato = ({
         ]}
       />
       <S.Info key={id}>
-        <S.InfoName disabled={!estaEditando} value={nome} />
+        <S.InfoName disabled={true} value={nome} />
         <S.InfoMail
+          type="email"
           disabled={!estaEditando}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <S.InfoPhone
+          type="tel"
           disabled={!estaEditando}
           value={telefone}
           onChange={(e) =>

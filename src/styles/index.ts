@@ -15,3 +15,35 @@ export const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   display: flex;
 `
+
+export const ContainerMain = styled.div`
+  display: flex;
+  width: 1120px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  padding-left: 40px;
+  user-select: none;
+
+  overflow-y: scroll;
+`
+
+export const Button = styled.button`
+  padding: 8px 16px;
+  color: #fff;
+  font-weight: bold;
+  font-family: ${variaveis.fontSecondary};
+  background-color: ${variaveis.avatarGreen};
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  opacity: 0.8;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+`

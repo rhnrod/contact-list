@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { variaveis } from '../../styles/variaveis'
 
-export const BarraLateralContainer = styled.div`
+export const BarraLateralContainer = styled.aside`
   width: 360px;
   height: 100vh;
   background-color: #ccc;
