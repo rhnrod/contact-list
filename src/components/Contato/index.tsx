@@ -8,7 +8,7 @@ import {
   faRectangleXmark
 } from '@fortawesome/free-solid-svg-icons'
 
-import { remover } from '../../store/reducers/contatos'
+import { remover, editar } from '../../store/reducers/contatos'
 import { variaveis } from '../../styles/variaveis'
 import * as S from './styles'
 import ContatoClass from '../../models/Contato'
@@ -17,15 +17,22 @@ import { useEffect, useState } from 'react'
 export type Contact = ContatoClass
 
 const Contato = ({
-  nome,
+  nome: nomeOriginal,
   email: emailOriginal,
   telefone: telefoneOriginal,
   id
 }: Contact) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
+  const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [telefone, setTelefone] = useState(999999999)
+
+  useEffect(() => {
+    if (nomeOriginal.length > 0) {
+      setNome(nomeOriginal)
+    }
+  }, [nomeOriginal])
 
   useEffect(() => {
     if (emailOriginal.length > 0) {
@@ -36,6 +43,25 @@ const Contato = ({
   useEffect(() => {
     setTelefone(telefoneOriginal)
   }, [telefoneOriginal])
+
+  const cancelar = () => {
+    setEstaEditando(!estaEditando)
+    setNome(nomeOriginal)
+    setEmail(emailOriginal)
+    setTelefone(telefoneOriginal)
+  }
+
+  const salvar = () => {
+    setEstaEditando(!estaEditando)
+    dispatch(
+      editar({
+        email,
+        telefone,
+        nome,
+        id
+      })
+    )
+  }
 
   return (
     <S.ContactCard>
@@ -52,7 +78,11 @@ const Contato = ({
         ]}
       />
       <S.Info key={id}>
-        <S.InfoName disabled={true} value={nome} />
+        <S.InfoName
+          disabled={!estaEditando}
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+        />
         <S.InfoMail
           type="email"
           disabled={!estaEditando}
@@ -75,7 +105,7 @@ const Contato = ({
           <FontAwesomeIcon
             icon={faSquareCheck}
             className="editCheck"
-            onClick={() => setEstaEditando(!estaEditando)}
+            onClick={salvar}
           />
         </>
       ) : (
@@ -92,7 +122,7 @@ const Contato = ({
           <FontAwesomeIcon
             icon={faRectangleXmark}
             className="editTrash"
-            onClick={() => setEstaEditando(!estaEditando)}
+            onClick={cancelar}
           />
         </>
       ) : (

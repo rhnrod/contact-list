@@ -8,8 +8,9 @@ export const Wrapper = styled.div`
   margin-top: 20px;
   align-items: center;
   padding: 16px;
-  border: 1px solid #282828;
+  border: 3px solid #282828;
   border-radius: 12px;
+  transition: 0.3s all ease;
 `
 
 export const Input = styled.input`

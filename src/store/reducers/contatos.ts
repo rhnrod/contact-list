@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid'
+import Contato from '../../models/Contato'
 
 const contatosSlice = createSlice({
   name: 'contatos',
@@ -89,9 +90,41 @@ const contatosSlice = createSlice({
           (contato) => contato.id !== action.payload
         )
       }
+    },
+    editar: (state, action: PayloadAction<Contato>) => {
+      const indexDoContato = state.itens.findIndex(
+        (c) => c.id === action.payload.id
+      )
+      if (indexDoContato >= 0) {
+        state.itens[indexDoContato] = action.payload
+      }
+    },
+    cadastrar: (state, action: PayloadAction<Contato>) => {
+      const contatoJaExiste = state.itens.find(
+        (contato) =>
+          contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
+      )
+
+      const numeroJaExiste = state.itens.find(
+        (contato) => contato.telefone === action.payload.telefone
+      )
+
+      const emailJaExiste = state.itens.find(
+        (contato) =>
+          contato.email.toLowerCase() === action.payload.email.toLowerCase()
+      )
+      if (contatoJaExiste) {
+        alert('Contato já cadastrado!')
+      } else if (numeroJaExiste) {
+        alert('Número de telefone já cadastrado!')
+      } else if (emailJaExiste) {
+        alert('Email já cadastrado!')
+      } else {
+        state.itens.push(action.payload)
+      }
     }
   }
 })
 
-export const { remover } = contatosSlice.actions
+export const { remover, editar, cadastrar } = contatosSlice.actions
 export default contatosSlice.reducer
