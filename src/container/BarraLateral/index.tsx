@@ -6,12 +6,14 @@ import {
   faArrowDownAZ,
   faArrowDownZA,
   faMagnifyingGlass,
-  faPhone
+  faPhone,
+  faUsersRectangle
 } from '@fortawesome/free-solid-svg-icons'
 import BotaoFiltro from '../../components/BotaoFIltros'
 import { BarraLateralContainer, Titulo, Wrapper } from './styles'
-import { alteraTermo } from '../../store/reducers/filtro'
+import { alterarTermo } from '../../store/reducers/filtro'
 import { RootReducer } from '../../store'
+import * as enums from '../../utils/enums/Contato'
 
 const BarraLateral = () => {
   const dispatch = useDispatch()
@@ -28,13 +30,40 @@ const BarraLateral = () => {
           type="text"
           placeholder="Buscar"
           value={termo}
-          onChange={(evento) => dispatch(alteraTermo(evento.target.value))}
+          onChange={(evento) => dispatch(alterarTermo(evento.target.value))}
         />
       </Wrapper>
-      <BotaoFiltro ativo icon={faArrowDownAZ} text="Nomes: A a Z" />
-      <BotaoFiltro icon={faArrowDownZA} text="Nomes: Z a A" />
-      <BotaoFiltro icon={faArrowDown19} text="Números: crescente" />
-      <BotaoFiltro icon={faArrowDown91} text="Números: decrescente" />
+      <BotaoFiltro
+        valor={enums.OrdemAlfabetica.CRESCENTE}
+        criterio="todas"
+        icon={faUsersRectangle}
+        text="Ordem de adição"
+        ativo
+      />
+      <BotaoFiltro
+        valor={enums.OrdemAlfabetica.CRESCENTE}
+        criterio="nome"
+        icon={faArrowDownAZ}
+        text="Nomes: A a Z"
+      />
+      <BotaoFiltro
+        valor={enums.OrdemAlfabetica.DECRESCENTE}
+        criterio="nome"
+        icon={faArrowDownZA}
+        text="Nomes: Z a A"
+      />
+      <BotaoFiltro
+        valor={enums.BuscaNumerica.CRESCENTE}
+        criterio="numero"
+        icon={faArrowDown19}
+        text="Números: crescente"
+      />
+      <BotaoFiltro
+        valor={enums.BuscaNumerica.DECRESCENTE}
+        criterio="numero"
+        icon={faArrowDown91}
+        text="Números: decrescente"
+      />
     </BarraLateralContainer>
   )
 }

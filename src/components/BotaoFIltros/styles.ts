@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { variaveis } from '../../styles/variaveis'
 
-import { Props } from '.'
-type semTextoEIcone = Omit<Props, 'icon' | 'text'>
+type Props = {
+  ativo: boolean
+}
 
 export const Title = styled.h1`
   font-size: 20px;
@@ -10,7 +11,7 @@ export const Title = styled.h1`
   margin-bottom: 8px;
 `
 
-export const Botao = styled.button<semTextoEIcone>`
+export const Botao = styled.button<Props>`
   padding: 8px 16px;
   font-size: 22px;
   font-weight: bold;

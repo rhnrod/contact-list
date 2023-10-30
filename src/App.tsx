@@ -1,17 +1,15 @@
 import { Provider } from 'react-redux'
-import BarraLateral from './container/BarraLateral'
-import ListaDeContatos from './container/ListaDeContatos'
 import { Container, GlobalStyle } from './styles'
 
 import store from './store'
+import Home from './pages/Home'
 
 function App() {
   return (
     <Provider store={store}>
       <GlobalStyle />
       <Container>
-        <BarraLateral />
-        <ListaDeContatos />
+        <Home />
       </Container>
     </Provider>
   )
