@@ -14,6 +14,11 @@ export const BotaoRedondo = styled.a`
   cursor: pointer;
   opacity: 0.35;
   z-index: 1;
+  height: 62px;
+  width: 62px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 
   user-select: none;
 

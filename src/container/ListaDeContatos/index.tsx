@@ -28,25 +28,25 @@ const ListaDeContatos = () => {
     return b.telefone - a.telefone
   }
 
-  const filtraTarefas = () => {
-    let tarefasFiltradas = itens
+  const filtrarContatos = () => {
+    let contatosFiltrados = itens
 
     if (termo !== undefined) {
-      tarefasFiltradas = tarefasFiltradas.filter(
+      contatosFiltrados = contatosFiltrados.filter(
         (item) => item.nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
 
       if (criterio === 'nome' && valor === 'crescente') {
-        tarefasFiltradas = tarefasFiltradas.sort(compareByName)
+        contatosFiltrados = contatosFiltrados.sort(compareByName)
       } else if (criterio === 'nome' && valor === 'decrescente') {
-        tarefasFiltradas = tarefasFiltradas.sort(compareByNameReverse)
+        contatosFiltrados = contatosFiltrados.sort(compareByNameReverse)
       } else if (criterio === 'numero' && valor === 'crescente') {
-        tarefasFiltradas = tarefasFiltradas.sort(compareByNumber)
+        contatosFiltrados = contatosFiltrados.sort(compareByNumber)
       } else if (criterio === 'numero' && valor === 'decrescente') {
-        tarefasFiltradas = tarefasFiltradas.sort(compareByNumberReverse)
+        contatosFiltrados = contatosFiltrados.sort(compareByNumberReverse)
       }
 
-      return tarefasFiltradas
+      return contatosFiltrados
     } else {
       return itens
     }
@@ -55,7 +55,7 @@ const ListaDeContatos = () => {
   return (
     <Container>
       <ListaContainer>
-        {filtraTarefas().map((c) => (
+        {filtrarContatos().map((c) => (
           <Contato
             key={c.id}
             nome={c.nome}

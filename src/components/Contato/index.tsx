@@ -10,18 +10,35 @@ import {
 
 import { remover } from '../../store/reducers/contatos'
 import { variaveis } from '../../styles/variaveis'
-import { ContactCard, Info } from './styles'
+import * as S from './styles'
 import ContatoClass from '../../models/Contato'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export type Contact = ContatoClass
 
-const Contato = ({ nome, email, telefone, id }: Contact) => {
+const Contato = ({
+  nome,
+  email: emailOriginal,
+  telefone: telefoneOriginal,
+  id
+}: Contact) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
+  const [email, setEmail] = useState('')
+  const [telefone, setTelefone] = useState(999999999)
+
+  useEffect(() => {
+    if (emailOriginal.length > 0) {
+      setEmail(emailOriginal)
+    }
+  }, [emailOriginal])
+
+  useEffect(() => {
+    setTelefone(telefoneOriginal)
+  }, [telefoneOriginal])
 
   return (
-    <ContactCard>
+    <S.ContactCard>
       <Avatar
         variant="beam"
         size={80}
@@ -34,11 +51,23 @@ const Contato = ({ nome, email, telefone, id }: Contact) => {
           variaveis.avatarBlue
         ]}
       />
-      <Info key={id}>
-        <h3>{nome}</h3>
-        <h4>{email}</h4>
-        <h5>+55 (55) {telefone}</h5>
-      </Info>
+      <S.Info key={id}>
+        <S.InfoName disabled={!estaEditando} value={nome} />
+        <S.InfoMail
+          disabled={!estaEditando}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <S.InfoPhone
+          disabled={!estaEditando}
+          value={telefone}
+          onChange={(e) =>
+            isNaN(Number(e.target.value))
+              ? setTelefone(telefoneOriginal)
+              : setTelefone(Number(e.target.value))
+          }
+        />
+      </S.Info>
       {estaEditando ? (
         <>
           <FontAwesomeIcon
@@ -71,7 +100,7 @@ const Contato = ({ nome, email, telefone, id }: Contact) => {
           onClick={() => dispatch(remover(id))}
         />
       )}
-    </ContactCard>
+    </S.ContactCard>
   )
 }
 

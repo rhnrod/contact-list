@@ -70,13 +70,62 @@ export const ContactCard = styled.div`
 
 export const Info = styled.div`
   max-width: 200px;
+`
+export const InfoName = styled.input`
+  font-family: ${variaveis.fontPrimary};
+  font-weight: bold;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  max-width: 120px;
 
-  h5 {
-    font-family: ${variaveis.fontSecondary};
-    background-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  &:disabled {
+    color: #000;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`
+export const InfoMail = styled.input`
+  font-family: ${variaveis.fontSecondary};
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  max-width: 120px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:disabled {
+    color: #000;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`
+
+export const InfoPhone = styled.input`
+  font-family: ${variaveis.fontSecondary};
+  background-color: transparent;
+  border: none;
+  max-width: 120px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:disabled {
+    color: #000;
+  }
+
+  &:focus {
+    outline: none;
   }
 `
