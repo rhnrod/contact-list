@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import BotaoAdicionar from '../../components/BotaoAdicionar'
 import { RootReducer } from '../../store'
 import { ContainerMain } from '../../styles'
+import decalc from '../../assets/no-contacts.png'
 
 const ListaDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
@@ -55,6 +56,14 @@ const ListaDeContatos = () => {
 
   return (
     <ContainerMain>
+      {filtrarContatos().length > 0 ? (
+        ''
+      ) : (
+        <>
+          <img src={decalc} />
+          <h1>Adicione novos contatos para visualizar aqui</h1>
+        </>
+      )}
       <ListaContainer>
         {filtrarContatos().map((c) => (
           <Contato

@@ -14,14 +14,10 @@ export const ContactCard = styled.div`
   transition: all ease 0.2s;
 
   background: linear-gradient(145deg, #f0f0f0, #cacaca);
-  box-shadow:
-    5px 5px 5px #5a5a5a,
-    -5px -5px 5px #ffffff;
+  box-shadow: 5px 5px 5px #5a5a5a;
 
   &:hover {
-    box-shadow:
-      8px 8px 8px #5a5a5a,
-      -8px -8px 8px #ffffff;
+    box-shadow: 8px 8px 8px #5a5a5a;
   }
 
   &:hover .edit,
@@ -52,7 +48,7 @@ export const ContactCard = styled.div`
     cursor: pointer;
 
     &:hover {
-      color: ${variaveis.avatarGreen};
+      color: ${variaveis.buttonSuccess};
     }
   }
 
@@ -65,7 +61,7 @@ export const ContactCard = styled.div`
     cursor: pointer;
 
     &:hover {
-      color: ${variaveis.avatarPink};
+      color: ${variaveis.buttonDanger};
     }
   }
 `

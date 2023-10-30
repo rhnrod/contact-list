@@ -37,8 +37,8 @@ const CriarContato = () => {
           name={nome}
           colors={[
             variaveis.avatarYellow,
-            variaveis.avatarOrange,
             variaveis.avatarPink,
+            variaveis.avatarRed,
             variaveis.avatarGreen,
             variaveis.avatarBlue
           ]}

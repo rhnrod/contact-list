@@ -16,7 +16,7 @@ export const Titulo = styled.h1`
 
   .iconPhone {
     height: 24px;
-    color: ${variaveis.avatarPink};
+    color: ${variaveis.buttonStandard};
   }
 `
 
@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
     }
 
     &::selection {
-      background-color: ${variaveis.avatarGreen};
+      background-color: ${variaveis.buttonStandard};
       color: #fff;
     }
   }
