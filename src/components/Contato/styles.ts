@@ -26,7 +26,8 @@ export const ContactCard = styled.div`
   }
 
   &:hover .edit,
-  &:hover .editTrash {
+  &:hover .editTrash,
+  &:hover .editCheck {
     display: block;
   }
 
@@ -41,6 +42,19 @@ export const ContactCard = styled.div`
       color: ${variaveis.avatarBlue};
     }
   }
+
+  .editCheck {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+    padding: 8px;
+
+    &:hover {
+      color: ${variaveis.avatarGreen};
+    }
+  }
+
   .editTrash {
     position: absolute;
     top: 20px;
