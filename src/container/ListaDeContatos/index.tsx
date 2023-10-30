@@ -7,12 +7,17 @@ import BotaoAdicionar from '../../components/BotaoAdicionar'
 import { RootReducer } from '../../store'
 import { ContainerMain } from '../../styles'
 import decalc from '../../assets/no-contacts.png'
+import { useState } from 'react'
+import Paginacao from '../../components/Paginacao'
 
 const ListaDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
   const { termo, valor, criterio } = useSelector(
     (state: RootReducer) => state.filtro
   )
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [contactsPerPage, setContactsPerPage] = useState(9)
 
   function compareByName(a: Contact, b: Contact) {
     return a.nome.localeCompare(b.nome)
@@ -54,6 +59,15 @@ const ListaDeContatos = () => {
     }
   }
 
+  const indexOfLastContact = currentPage * contactsPerPage
+  const indexOfFirstContact = indexOfLastContact - contactsPerPage
+  const currentContacts = filtrarContatos().slice(
+    indexOfFirstContact,
+    indexOfLastContact
+  )
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
+
   return (
     <ContainerMain>
       {filtrarContatos().length > 0 ? (
@@ -65,7 +79,7 @@ const ListaDeContatos = () => {
         </>
       )}
       <ListaContainer>
-        {filtrarContatos().map((c) => (
+        {currentContacts.map((c) => (
           <Contato
             key={c.id}
             nome={c.nome}
@@ -76,6 +90,11 @@ const ListaDeContatos = () => {
         ))}
         <BotaoAdicionar />
       </ListaContainer>
+      <Paginacao
+        contactsPerPage={contactsPerPage}
+        totalContacts={filtrarContatos().length}
+        paginate={paginate}
+      />
     </ContainerMain>
   )
 }
