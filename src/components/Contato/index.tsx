@@ -5,7 +5,8 @@ import {
   faSquareCheck,
   faPenToSquare,
   faTrash,
-  faRectangleXmark
+  faRectangleXmark,
+  faEdit
 } from '@fortawesome/free-solid-svg-icons'
 
 import { remover, editar } from '../../store/reducers/contatos'
@@ -65,6 +66,10 @@ const Contato = ({
 
   return (
     <S.ContactCard>
+      <S.Warn editando={estaEditando}>
+        <FontAwesomeIcon icon={faEdit} />
+        <em>Editando...</em>
+      </S.Warn>
       <Avatar
         variant="beam"
         size={80}

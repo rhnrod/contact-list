@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { variaveis } from '../../styles/variaveis'
+type Props = {
+  editando?: boolean
+}
 
 export const ContactCard = styled.div`
   position: relative;
@@ -8,6 +11,7 @@ export const ContactCard = styled.div`
   gap: 16px;
   margin: 16px 0;
   padding-left: 20px;
+  position: relative;
 
   width: 340px;
   height: 120px;
@@ -63,6 +67,20 @@ export const ContactCard = styled.div`
     &:hover {
       color: ${variaveis.buttonDanger};
     }
+  }
+`
+
+export const Warn = styled.p<Props>`
+  display: ${(props) => (props.editando ? 'block' : 'none')};
+  font-size: 10px;
+  font-family: ${variaveis.fontSecondary};
+  font-weight: bold;
+  position: absolute;
+  bottom: 5px;
+  right: 30px;
+
+  em {
+    padding-left: 4px;
   }
 `
 

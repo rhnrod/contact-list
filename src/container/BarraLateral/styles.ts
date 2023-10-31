@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { variaveis } from '../../styles/variaveis'
+import { Link } from 'react-router-dom'
 
 export const BarraLateralContainer = styled.aside`
   width: 360px;
@@ -53,4 +54,21 @@ export const Wrapper = styled.div`
     border-radius: 6px 0 0 6px;
     background-color: #fff;
   }
+`
+export const LinkWrapper = styled.nav`
+  display: flex;
+  flex-direction: column;
+`
+export const BotaoVoltar = styled(Link)`
+  padding: 8px 16px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-align: left;
+  margin: 4px 0;
+  cursor: pointer;
+  border: none;
+  background-color: ${variaveis.buttonStandard};
+  text-decoration: none;
+  color: #fff;
 `

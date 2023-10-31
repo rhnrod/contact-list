@@ -53,6 +53,7 @@ const CriarContato = () => {
   const revalidateTelefone = () => {
     setTelefoneIsNotValid(false)
   }
+
   return (
     <ContainerMain>
       <h1>Adicionar novo contato</h1>
