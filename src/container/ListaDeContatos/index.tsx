@@ -1,4 +1,4 @@
-import { ListaContainer } from './styles'
+import { Botao, ListaContainer, Wrapper } from './styles'
 import { Contact } from '../../components/Contato'
 import Contato from '../../components/Contato'
 import { useSelector } from 'react-redux'
@@ -78,6 +78,25 @@ const ListaDeContatos = () => {
           <h1>Adicione novos contatos para visualizar aqui</h1>
         </>
       )}
+      <Wrapper>
+        Contatos por página:
+        <Botao
+          ativo={contactsPerPage == 9}
+          onClick={(e) =>
+            setContactsPerPage(e.currentTarget.innerHTML as unknown as number)
+          }
+        >
+          9
+        </Botao>
+        <Botao
+          ativo={contactsPerPage == 12}
+          onClick={(e) =>
+            setContactsPerPage(e.currentTarget.innerHTML as unknown as number)
+          }
+        >
+          12
+        </Botao>
+      </Wrapper>
       <ListaContainer>
         {currentContacts.map((c) => (
           <Contato
